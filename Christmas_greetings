@@ -1,0 +1,82 @@
+name = input('You got a message form the Snata! \nPlease enter your name to read the messsage: ')
+print("Dear " + name + ",")
+import time
+time.sleep(1)
+print('Happy Holidays!')
+time.sleep(1)
+goodness = input('Have you been good this year? YES or NO?')
+time.sleep(1)
+
+if goodness[0] == "Y" :
+	print('Great! I got your Christmas gift here.') 
+	
+
+else:
+	print('Hmmmmm, what happened, kid.....')
+	time.sleep(1)
+	print('I know it has been a hard year and you have tried.')
+	time.sleep(1)
+	print('So I still brought your gift!')
+
+time.sleep(1)
+gift_choice = input('Enter a number from 1 to 5 to open your gift: ')
+
+
+
+if gift_choice[0] == '1':
+	print('Put a smile on your face every single day ^_^')
+	
+
+if gift_choice[0] == '2':
+	print('Snoopy says hi to you!')
+	print('''
+                .---- .
+               .       、
+            _·'__       ·
+        . --($) ($$)---/#\\
+      .`@             /###\\
+      :         ,     #####
+       `-..__.-'  _.- \###/
+           `;_:       `"
+             .'""""""`.
+            /,  hi,    \\\\
+           //  dear!    \\\\
+          `-._________.-'
+             __`.|.`__
+           (_____|_____)
+''')
+
+if gift_choice[0] == '3':
+	print('Great choice of three! Light up a Christmas tree!')
+	#声明树的高度
+	height = 5
+	#树的雪花数，初始为1
+	stars = 1
+	#以数的高度作为循环次数
+	 
+	for i in range(height):
+	    print((' ' * (height - i)) + ('*' * stars))
+	    stars += 2
+	#输出树干
+	print((' ' * height) + '|')
+
+if gift_choice[0] == '4':
+	print('Let it snnow~ Let it snnow~ Let it snnow~ ')
+	i = 1
+	while i <= 9:
+	    if i <= 5:
+	        j = 1
+	        while j <= i:
+	            print('*',end=' ')
+	            j += 1
+	    else:
+	        j = 1
+	        while j <= 9-i+1:
+	            print('*',end=' ')
+	            j += 1
+	    print()
+	    i += 1
+
+if gift_choice[0] == '5':
+	print('Five for LOVE. Santa sends love from the North Pole!')
+	print('\n'.join([''.join([('Love'[(x-y) % len('Love')] if ((x*0.05)**2+(y*0.1)**2-1)**3-(x*0.05)**2*(y*0.1)**3 <= 0 else ' ') for x in range(-30, 30)]) for y in range(30, -30, -1)]))
