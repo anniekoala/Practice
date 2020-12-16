@@ -1,4 +1,4 @@
-name = input('You got a message form the Snata! \nPlease enter your name to read the messsage: ')
+name = input('You got a message form the Santa! \nPlease enter your name to read the messsage: ')
 print("Dear " + name + ",")
 import time
 time.sleep(1)
