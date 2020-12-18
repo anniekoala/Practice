@@ -1,0 +1,6 @@
+resp = input('Hey can you pass me the book? ')
+
+while resp != 'Stop':
+	print (f'{resp}')
+	resp = input (" ")
+print('Fine.')
