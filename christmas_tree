@@ -1,0 +1,6 @@
+num = range(-3,61,4)
+for count in num:
+	print (" "* ((max(num)-count) // 2) + "O" * count)
+	
+for stem in range (5): 
+	print (" "* (max(num) //2) + "0")
