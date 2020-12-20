@@ -1,54 +1,36 @@
-# # 
-
-# print ('ROCK PAPER SCISSORS!\n 1 - Rock\n 2 - Paper\n 3 - Scissors')
-# p1=input ('Player One enter: ')
-# print('-----NO CHEATING------\n' *30)
-# p2=input ('Player Two enter: ')
-
-# import time
-# time.sleep(1)
-
-# p1=int(p1)
-# p2=int(p2)
-
-# if (p1==1 or p1==2 or p1==3) and (p2==1 or p2==2 or p2==3):	
-# 	if p1-p2==1 or p1-p2==-1:
-# 		if p1>p2:
-# 			print('Player one wins!')
-# 		else:
-# 			print('player two wins!')
-# 	elif p1-p2 ==2 or p1-p2==-2:
-# 		if p1<p2:
-# 			print('Player one wins!')
-# 		else:
-# 			print('player two wins!')
-# 	elif p1 == p2:
-# 		print("It's a tie!")
-# else:
-# 	print('Invalid enter. Please try again.')
-# 	
-print ('ROCK PAPER SCISSORS!\n 1 - Rock\n 2 - Paper\n 3 - Scissors')
-p1=input ('Player One enter: ')
-print('-----NO CHEATING------\n' *30)
-
-import random
-p2=random.randint(1, 3)
-print(f"The computer enters: {str(p2)}")
-
-p1=int(p1)
-
-if (p1==1 or p1==2 or p1==3) and (p2==1 or p2==2 or p2==3):	
-	if p1-p2==1 or p1-p2==-1:
-		if p1>p2:
-			print('Player one wins!')
+	while p1_wins < winning_score and computer_wins < winning_score:
+		print(f'{p1_wins} vs. {computer_wins} ')
+		p1 = input('Player One enters: ')
+		if p1 == 'quit':
+			break
+		elif p1 != '1' and p1 != '2' and p1 != '3':  #to make sure the p1 entry is valid
+			print('Invalid Entry. Please try again.')
 		else:
-			print('player two wins!')
-	elif p1-p2 ==2 or p1-p2==-2:
-		if p1<p2:
-			print('Player one wins!')
-		else:
-			print('player two wins!')
-	elif p1 == p2:
-		print("It's a tie!")
-else:
-	print('Invalid enter. Please try again.')
+			p1 = int(p1)
+			p2 = random.randint(1, 3)
+			print(f"The computer enters: {str( p2 )}")
+			if p1-p2 == 1 or p1-p2 == -1:
+				if p1>p2:
+					print('You win!')
+					p1_wins +=1
+				else:
+					print('computer wins!')
+					computer_wins +=1
+			elif p1-p2 ==2 or p1-p2==-2:
+				if p1<p2:
+					print('You win!')
+					p1_wins +=1
+				else:
+					print('Computer wins!')
+					computer_wins +=1
+			else:
+				print("It's a tie!")
+
+	print(f'FINAL SCORE____You got {p1_wins}___Computer got {computer_wins}')
+
+	again = input('Play again? y/n ')
+	if again == 'n':
+		play_again = False
+		print('Thank you for playing.')
+	elif again != 'y':
+		print('Invalid entry. ')
