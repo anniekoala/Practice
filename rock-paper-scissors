@@ -1,3 +1,12 @@
+andom
+play_again = True
+while play_again:
+	p1_wins = 0
+	computer_wins = 0
+	winning_score = 3
+
+	print('ROCK PAPER SCISSORS!\n 1 - Rock\n 2 - Paper\n 3 - Scissors')
+
 	while p1_wins < winning_score and computer_wins < winning_score:
 		print(f'{p1_wins} vs. {computer_wins} ')
 		p1 = input('Player One enters: ')
@@ -28,9 +37,16 @@
 
 	print(f'FINAL SCORE____You got {p1_wins}___Computer got {computer_wins}')
 
-	again = input('Play again? y/n ')
-	if again == 'n':
-		play_again = False
-		print('Thank you for playing.')
-	elif again != 'y':
-		print('Invalid entry. ')
+	invalid_entry = True
+	while invalid_entry:
+		again = input('Play again? y/n ')
+		if again.lower() == 'n':
+			invalid_entry = False
+			play_again = False
+			print('Thank you for playing.')
+			invalid_entry = False
+		elif again.lower() != "y":
+			print('Invalid entry.')
+			play_again = False
+		else:
+			invalid_entry = False
